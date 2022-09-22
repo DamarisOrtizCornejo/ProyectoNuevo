@@ -1,0 +1,185 @@
+{% extends 'formulario.html' %}
+{% load static %}
+
+{% block js %}
+{#    <script src="{% static 'cliente/js/form.js' %}"></script>#}
+{% endblock %}
+
+{% block controls %}
+    {% csrf_token %}
+    {% if form.errors %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          <strong>Error al Grabar</strong> {{ form.errors }}
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+    {% endif %}
+    <input type="hidden" name="action" value="{{ action }}">
+
+    <h4 class="fw-bold fst-italic text-secondary text-center">DATOS PERSONALES</h4>
+    <hr class="bg-success border-5 border-top border-success">
+        <div class="form-group">
+            <label class="fw-bold" >Nombre:</label>
+            {{ form.nombres }}
+        </div>
+        <div class="form-group">
+            <label class="fw-bold" >Cedula:</label>
+            {{ form.cedula }}
+        </div>
+        <div class="form-group">
+            <label class="fw-bold" >Fecha Nacimiento:</label>
+            {{ form.fecha_nacimiento }}
+        </div>
+        <div class="form-group">
+            <label class="fw-bold" >Género:</label>
+            {{ form.genero }}
+        </div>
+        <div class="form-group">
+            <label class="fw-bold" >País:</label>
+            {{ form.pais }}
+        </div>
+        <div class="form-group">
+            <label class="fw-bold" >Provincia:</label>
+            {{ form.provincia }}
+        </div>
+        <div class="form-group">
+            <label class="fw-bold" >Ciudad:</label>
+            {{ form.ciudad }}
+        </div>
+        <div class="form-group">
+            <label class="fw-bold" >Estado Civil:</label>
+            {{ form.estado_civil }}
+        </div>
+        <div class="form-group">
+            <label class="fw-bold" >Email:</label>
+            {{ form.email }}
+        </div>
+        <div class="form-group">
+            <label class="fw-bold" >Dirección:</label>
+            {{ form.direccion }}
+        </div>
+        <div class="form-group">
+            <label class="fw-bold" >Teléfono:</label>
+            {{ form.telefono }}
+        </div>
+        <div class="form-group">
+            <label class="fw-bold" >Fecha IESS:</label>
+            {{ form.fecha_IESS }}
+        </div>
+        <div class="form-group">
+            <label class="fw-bold" >Tipo Contrato:</label>
+            {{ form.tipo_Contrato }}
+        </div>
+        <div class="form-group">
+            <label class="fw-bold" >Fecha Ingreso:</label>
+            {{ form.fecha_Ingreso }}
+        </div>
+        <div class="form-group">
+            <label class="fw-bold" >Foto:</label>
+            {{ form.foto }}
+        </div>
+        <div class="form-group">
+            <label class="fw-bold" >Cargo:</label>
+            {{ form.cargo }}
+        </div>
+        <div class="form-group">
+            <label class="fw-bold" >Departamento:</label>
+            {{ form.departamento }}
+        </div>
+        <div class="form-group">
+            <label class="fw-bold" >Estado</label>
+            {{ form.estado }}
+        </div>
+    <hr class="bg-success border-5 border-top border-success">
+    <h4 class="fw-bold fst-italic text-secondary text-center">CONTACTO DE EMERGENCIAS</h4>
+    <hr class="bg-success border-5 border-top border-success">
+
+        <div class="form-group">
+            <label class="fw-bold" >Nombre:</label>
+            {{ form2.nombre }}
+        </div>
+    <br>
+        <div class="form-group">
+            <label class="fw-bold">Cédula:</label>
+            {{ form2.cedula }}
+        </div>
+    <br>
+        <div class="col-12">
+            <label class="fw-bold">Teléfono:</label>
+            {{ form2.telefonos }}
+        </div>
+    <br>
+        <div class="col-12">
+            <label class="fw-bold">Parentesco:</label>
+            {{ form2.parentesco }}
+        </div>
+
+        <div class="col-12">
+            <label class="fw-bold">Dirección:</label>
+            {{ form2.direccion }}
+        </div>
+        <div>
+            <a class="btn btn-outline-info">
+                         <b>➕ Agregar</b>
+            </a>
+        </div>
+    <hr class="bg-success border-5 border-top border-success">
+    <h4 class="fw-bold fst-italic text-secondary text-center">INFORMACIÓN ACADÉMICA</h4>
+    <hr class="bg-success border-5 border-top border-success">
+        <div class="col-12">
+            <label class="fw-bold">Fecha Inicio:</label>
+            {{ form3.fecha_Inicio }}
+        </div>
+
+        <div class="col-12">
+            <label class="fw-bold">Fecha Fin:</label>
+            {{ form3.fecha_Fin }}
+        </div>
+
+        <div class="col-12">
+            <label class="fw-bold">Institución:</label>
+            {{ form3.institucion }}
+        </div>
+
+        <div class="col-12">
+            <label class="fw-bold">Título:</label>
+            {{ form3.titulo }}
+        </div>
+        <div>
+            <a class="btn btn-outline-info">
+                         <b>➕ Agregar</b>
+            </a>
+        </div>
+    <hr class="bg-success border-5 border-top border-success">
+    <h4 class="fw-bold fst-italic text-secondary text-center">CAPACITACIONES</h4>
+    <hr class="bg-success border-5 border-top border-success">
+        <div class="col-12">
+            <label class="fw-bold">Certificado:</label>
+            {{ form4.certificado }}
+        </div>
+
+        <div class="col-12">
+            <label class="fw-bold">Fecha Inicio:</label>
+            {{ form4.fecha_Inicio }}
+        </div>
+
+        <div class="col-12">
+            <label class="fw-bold">Fecha Fin:</label>
+            {{ form4.fecha_Fin }}
+        </div>
+
+        <div class="col-12">
+            <label class="fw-bold">Duración:</label>
+            {{ form4.duracion }}
+        </div>
+        <div>
+            <a class="btn btn-outline-info">
+                         <b>➕ Agregar</b>
+            </a>
+        </div>
+
+    <output id="idImgContenedor" style="width: 200px !important;"></output>
+{% endblock %}
+
