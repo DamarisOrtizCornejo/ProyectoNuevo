@@ -24,12 +24,12 @@
 {% endblock %}
 
 {% block rows %}
-    {% for contaEmer in contactoEmergencia %}
+    {% for emp in contactoEmergencia %}
         <tbody>
             <tr class="align-middle table-warning text-center table-bordered border-dark">
-                <td>{{ contaEmer.empleado }}</td>
+                <td>{{ emp.nombres }}</td>
                 <td class="acciones">
-                    <a href="{% url 'ficha_Personal:registroContactoEmergencia' contaEmer.empleado_id %}">🔎️ Ver información</a>
+                    <a href="{% url 'ficha_Personal:registroContactoEmergencia' emp.id %}">🔎️ Ver información</a>
                 </td>
             </tr>
 

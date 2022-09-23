@@ -6,7 +6,7 @@ from aplicaciones.ficha_personal.models import ContactoEmergencias,Empleado
 class ContactoEmergenciaListView(ListView):
     template_name = "ContactoEmergencia/listContactoEmergencia.html"
     context_object_name = 'contactoEmergencia'
-    model = ContactoEmergencias
+    model = Empleado
     paginate_by = 3
     #queryset = Cliente.objects.filter(estado=True)
 
@@ -14,7 +14,7 @@ class ContactoEmergenciaListView(ListView):
         query = self.request.GET.get("query")
         print(query)
         if query:
-            return self.model.objects.filter(empleado_id__incontains=query)
+            return self.model.objects.filter(nombres__incontains=query)
         else:
             return self.model.objects.all()
 

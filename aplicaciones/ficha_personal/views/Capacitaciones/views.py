@@ -5,7 +5,7 @@ from aplicaciones.ficha_personal.models import Capacitaciones
 
 class CapacitacionesListView(ListView):
     template_name = "Capacitaciones/listCapacitaciones.html"
-    context_object_name = 'capacitacion'
+    context_object_name = 'empleados'
     model = Capacitaciones
     paginate_by = 3
     #queryset = Cliente.objects.filter(estado=True)
@@ -29,9 +29,8 @@ class CapacitacionesListView(ListView):
 
 class RegistroCapacitacionesListView(ListView):
     template_name = "Capacitaciones/registroCapacitaciones.html"
-    context_object_name = 'capacitaciones'
-    success_url = reverse_lazy('ficha_Personal:capacitaciones')
     model = Capacitaciones
+    context_object_name = 'capacitaciones'
     paginate_by = 3
     #queryset = Cliente.objects.filter(estado=True)
 

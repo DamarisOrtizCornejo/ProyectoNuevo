@@ -22,11 +22,11 @@
 {% endblock %}
 
 {% block rows %}
-  {% for object in capacitaciones %}
+  {% for object in empleados %}
       <tr class="align-middle table-warning text-center">
-          <td>{{ object.empleado }}</td>
+          <td>{{ object.nombres }}</td>
           <td class="acciones">
-            <a href="{% url 'ficha_Personal:registroCapacitaciones' object.id %}">🔎️ Ver información</a>
+            <a href="{% url 'ficha_Personal:registroCapacitaciones' object.nombres %}">🔎️ Ver información</a>
           </td>
       </tr>
   {% endfor %}

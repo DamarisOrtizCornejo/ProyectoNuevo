@@ -102,15 +102,19 @@ print(Linea.objects.values("id","estado"))
 #
 # print(gru2)
 #print(Linea.objects.get(id=4).grupos.filter(id__gte=7))
-from weasyprint import HTML
+
 from django.template.loader import get_template
+
+
+
+from weasyprint import HTML
 
 def impresion():
     template= get_template("factur.html")
     clientes = get_clientes()
     context={"titulo":"LISTADO DE CLIENTES","clientes":clientes}
     html_template = template.render(context)
-    HTML(string=html_template).write_pdf(target="clientes.pdf")
+    HTML(string=html_template).write_pdf(target="prueba.pdf")
 
 def get_clientes():
     clientes = Cliente.objects.all()
